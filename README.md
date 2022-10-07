@@ -1,4 +1,4 @@
-# leos_music_shop_flutter
+# Leo's Music Shop - Flutter
 
 Leo's Coolest Music Shop in Flutter.
 

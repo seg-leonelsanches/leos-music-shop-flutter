@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_segment/flutter_segment.dart';
 
 import '../../mixins/home_mixin.dart';
 
@@ -23,6 +24,15 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with HomeScreenMixin {
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
       _counter++;
+
+      Segment.track(
+        eventName: 'ButtonClicked',
+        properties: {
+          'foo': 'bar',
+          'number': 1337,
+          'clicked': true,
+        },
+      );
     });
   }
 
