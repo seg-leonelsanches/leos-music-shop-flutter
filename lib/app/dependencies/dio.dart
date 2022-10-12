@@ -7,7 +7,18 @@ import '../services/storage_service.dart';
 
 class CustomDio {
   final _dio = Dio(BaseOptions(connectTimeout: 30 * 1000));
-  // final CustomInterceptors _customInterceptors;
+  final CustomInterceptor _customInterceptor;
+
+  CustomDio({
+    required CustomInterceptor customInterceptor
+  }): _customInterceptor = customInterceptor;
+
+  Dio withAuth() {
+    _dio.interceptors.add(_customInterceptor);
+    return _dio;
+  }
+
+  Dio get instance => _dio;
 }
 
 class CustomInterceptor extends Interceptor {

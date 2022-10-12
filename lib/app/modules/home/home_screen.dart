@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_segment/flutter_segment.dart';
+import 'package:leos_music_shop_flutter/app/components/basses/basses_component.dart';
+import 'package:leos_music_shop_flutter/app/components/drums/drums_component.dart';
+import 'package:leos_music_shop_flutter/app/components/guitars/guitars_component.dart';
 
 import '../../mixins/home_mixin.dart';
 
@@ -70,6 +73,9 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with HomeScreenMixin {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            GuitarsComponent(),
+            BassesComponent(),
+            DrumsComponent(),
             const Text(
               'You have pushed the button this many times:',
             ),
