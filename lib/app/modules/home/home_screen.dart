@@ -73,9 +73,9 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with HomeScreenMixin {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            GuitarsComponent(),
-            BassesComponent(),
-            DrumsComponent(),
+            const GuitarsComponent(),
+            const BassesComponent(),
+            const DrumsComponent(),
             const Text(
               'You have pushed the button this many times:',
             ),

@@ -2,15 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
 class GuitarsComponent extends StatelessWidget {
+  const GuitarsComponent({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Shimmer.fromColors(
-      baseColor: const Color.fromARGB(0, 90, 90, 90),
-      highlightColor: const Color.fromARGB(0, 200, 200, 200),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
       child: Column(
-        children: const <Widget>[
+        children: <Widget>[
           Text(
             'Guitars',
+            style: Theme.of(context).textTheme.headline4,
           )
         ],
       ),
