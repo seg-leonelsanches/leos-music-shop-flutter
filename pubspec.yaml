@@ -44,6 +44,7 @@ dependencies:
   flutter_segment: ^3.12.1
   jwt_decoder: ^2.0.1
   shared_preferences: ^2.0.15
+  shimmer: ^2.0.0
 
 dev_dependencies:
   integration_test:
