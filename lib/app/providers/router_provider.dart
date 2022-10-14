@@ -1,4 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:leos_music_shop_flutter/app/core/app_router.dart';
+
+import '../core/app_router.gr.dart';
 
 final routerProvider = Provider<AppRouter>((ref) => AppRouter());

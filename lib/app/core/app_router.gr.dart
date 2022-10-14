@@ -10,18 +10,23 @@
 //
 // ignore_for_file: type=lint
 
-part of 'app_router.dart';
+// ignore_for_file: no_leading_underscores_for_library_prefixes
+import 'package:auto_route/auto_route.dart' as _i2;
+import 'package:flutter/material.dart' as _i3;
 
-class _$AppRouter extends RootStackRouter {
-  _$AppRouter([GlobalKey<NavigatorState>? navigatorKey]) : super(navigatorKey);
+import '../modules/home/home_screen.dart' as _i1;
+
+class AppRouter extends _i2.RootStackRouter {
+  AppRouter([_i3.GlobalKey<_i3.NavigatorState>? navigatorKey])
+      : super(navigatorKey);
 
   @override
-  final Map<String, PageFactory> pagesMap = {
+  final Map<String, _i2.PageFactory> pagesMap = {
     HomeRoute.name: (routeData) {
       final args = routeData.argsAs<HomeRouteArgs>();
-      return MaterialPageX<dynamic>(
+      return _i2.MaterialPageX<dynamic>(
         routeData: routeData,
-        child: HomeScreen(
+        child: _i1.HomeScreen(
           key: args.key,
           title: args.title,
         ),
@@ -30,8 +35,8 @@ class _$AppRouter extends RootStackRouter {
   };
 
   @override
-  List<RouteConfig> get routes => [
-        RouteConfig(
+  List<_i2.RouteConfig> get routes => [
+        _i2.RouteConfig(
           HomeRoute.name,
           path: '/home',
         )
@@ -39,10 +44,10 @@ class _$AppRouter extends RootStackRouter {
 }
 
 /// generated route for
-/// [HomeScreen]
-class HomeRoute extends PageRouteInfo<HomeRouteArgs> {
+/// [_i1.HomeScreen]
+class HomeRoute extends _i2.PageRouteInfo<HomeRouteArgs> {
   HomeRoute({
-    Key? key,
+    _i3.Key? key,
     required String title,
   }) : super(
           HomeRoute.name,
@@ -62,7 +67,7 @@ class HomeRouteArgs {
     required this.title,
   });
 
-  final Key? key;
+  final _i3.Key? key;
 
   final String title;
 

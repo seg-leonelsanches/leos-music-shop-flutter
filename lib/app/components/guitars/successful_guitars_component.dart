@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../models/guitar.dart';
+import 'guitar_card.dart';
 
 class SuccessfulGuitarsComponent extends ConsumerStatefulWidget {
   final List<Guitar> guitars;
@@ -20,9 +21,16 @@ class _SuccessfulGuitarsComponentState
     return Column(
       children: <Widget>[
         Text(
-          'Guitars: ${widget.guitars.length}',
+          'Guitars',
           style: Theme.of(context).textTheme.headline4,
-        )
+        ),
+        ListView.builder(
+            scrollDirection: Axis.vertical,
+            shrinkWrap: true,
+            itemCount: widget.guitars.length,
+            itemBuilder: (_, index) {
+              return GuitarCard(guitar: widget.guitars[index]);
+            })
       ],
     );
     /* return ListView(

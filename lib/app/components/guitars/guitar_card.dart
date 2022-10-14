@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:leos_music_shop_flutter/app/providers/router_provider.dart';
 
@@ -17,6 +17,13 @@ class GuitarCard extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return GestureDetector(
       onTap: () => onTap(ref),
+      child: Card(
+        child: Row(
+          children: [
+            Text(guitar.model)
+          ]
+        )
+      )
     );
   }
 }

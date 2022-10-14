@@ -17,6 +17,7 @@ samples, guidance on mobile development, and a full API reference.
 
 ## Architecture
 
+- [AutoRouter](https://github.com/Milad-Akarie/auto_route_library), used to establish global routes between componentes in the app;
 - [Riverpod](https://riverpod.dev/), used for caching and global state retrieval;
 - [Freezed](https://github.com/rrousselGit/freezed), to reduce boilerplates and generate repetitive code;
 - [Dio](https://github.com/flutterchina/dio), a robust HTTP Client;
@@ -25,7 +26,7 @@ samples, guidance on mobile development, and a full API reference.
 
 ### Generated Code
 
-Part of the developed code is generated through Freezed. If necessary, the command to generate the boilerplates is:
+Part of the developed code is generated through Freezed and Auto Router. If necessary, the command to generate the boilerplates is:
 
 ```sh
 flutter pub run build_runner build --delete-conflicting-outputs
@@ -50,3 +51,5 @@ Then run `flutter pub run build_runner build --delete-conflicting-outputs` again
 ## Motivation
 
 At Segment there are well-known examples of mobile app examples using, for instance, React Native, but none in Flutter. 
+
+This follows the same principles of the other "Music Shop" apps: implementing a fictional store that sells musical instruments, but using different technologies to be tested with Segment. 
