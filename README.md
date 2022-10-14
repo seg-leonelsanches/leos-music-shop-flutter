@@ -23,6 +23,30 @@ samples, guidance on mobile development, and a full API reference.
 - [Shared Preferences](https://github.com/flutter/plugins/tree/main/packages/shared_preferences/shared_preferences), an agnostic library to work with the device persistence storage;
 - [Shimmer](https://github.com/hnvn/flutter_shimmer), library to easily implement a shimmer (or loading) effect while a component is waiting for data to load.
 
+### Generated Code
+
+Part of the developed code is generated through Freezed. If necessary, the command to generate the boilerplates is:
+
+```sh
+flutter pub run build_runner build --delete-conflicting-outputs
+```
+
+It's common to have an error like this after running the command:
+
+```
+Unhandled exception:
+Bad state: Unable to generate package graph, no `.../.dart_tool/flutter_gen/pubspec.yaml` found.
+```
+
+If this error happens, run first:
+
+```sh
+flutter clean
+flutter packages pub get
+```
+
+Then run `flutter pub run build_runner build --delete-conflicting-outputs` again.
+
 ## Motivation
 
 At Segment there are well-known examples of mobile app examples using, for instance, React Native, but none in Flutter. 
