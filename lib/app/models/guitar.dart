@@ -14,11 +14,11 @@ class Guitar {
 
   factory Guitar.fromJson(Map<String, dynamic> json) {
     return Guitar(
-      model: json['name'],
+      model: json['model'],
       manufacturer: json['manufacturer'],
-      price: json['price'],
+      price: (json['price'] as int).toDouble(),
       id: json['id'],
-      mainImage: json['mainImage']
+      mainImage: json.putIfAbsent('mainImage', () => "")
     );
   }
 }

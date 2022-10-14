@@ -73,15 +73,22 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with HomeScreenMixin {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const GuitarsComponent(),
-            const BassesComponent(),
-            const DrumsComponent(),
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+            Expanded(
+              // wrap in Expanded
+              child: ListView(
+                children: [
+                  const GuitarsComponent(),
+                  const BassesComponent(),
+                  const DrumsComponent(),
+                  const Text(
+                    'You have pushed the button this many times:',
+                  ),
+                  Text(
+                    '$_counter',
+                    style: Theme.of(context).textTheme.headline4,
+                  ),
+                ],
+              ),
             ),
           ],
         ),

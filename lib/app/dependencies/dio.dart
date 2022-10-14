@@ -35,7 +35,8 @@ class CustomInterceptor extends Interceptor {
     String? bassToken = await _storageService.bassJwt;
     String? drumsToken = await _storageService.drumsJwt;
 
-    if (bassToken == null || bassToken.isEmpty || drumsToken == null || drumsToken.isEmpty) {
+    // TODO: Add it later.
+    /* if (bassToken == null || bassToken.isEmpty || drumsToken == null || drumsToken.isEmpty) {
       return;
     }
 
@@ -43,7 +44,7 @@ class CustomInterceptor extends Interceptor {
 
     if (hasExpired) {
       await Fluttertoast.showToast(msg: 'Please log in');
-    }
+    } */
 
     options.headers['Content-Type'] = 'application/json';
     options.headers['Accept'] = 'application/json';

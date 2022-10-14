@@ -4,7 +4,7 @@ import 'package:leos_music_shop_flutter/app/dependencies/dio.dart';
 import '../models/guitar.dart';
 
 class GuitarsRepository {
-  final String _guitarsApiUrl = "http://localhost:3000/api";
+  final String _guitarsApiUrl = "https://leos-guitar-shop-nextjs.vercel.app/api";
   final CustomDio _customDio;
 
   GuitarsRepository(
@@ -16,8 +16,8 @@ class GuitarsRepository {
       final dio = _customDio.withAuth();
 
       Response response = await dio.get('${Uri.parse('$_guitarsApiUrl/catalog')}');
-      Map<String, dynamic> data = response.data as Map<String, dynamic>;
-      return (data['results'])
+      List<dynamic> data = response.data as List<dynamic>;
+      return data
           .map<Guitar>((json) => Guitar.fromJson(json))
           .toList();
     } catch (error) {
