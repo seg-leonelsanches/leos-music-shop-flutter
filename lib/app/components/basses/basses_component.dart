@@ -13,10 +13,12 @@ class BassesComponent extends StatelessWidget {
       ),
       child: Column(
         children: <Widget>[
+          const SizedBox(height: 30),
           Text(
             'Basses',
             style: Theme.of(context).textTheme.headline4,
-          )
+          ),
+          const SizedBox(height: 30),
         ],
       ),
     );

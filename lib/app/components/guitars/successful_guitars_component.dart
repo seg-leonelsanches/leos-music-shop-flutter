@@ -19,10 +19,12 @@ class _SuccessfulGuitarsComponentState
   @override
   Widget build(BuildContext context) {
     return Column(children: [
+      const SizedBox(height: 30),
       Text(
         'Guitars',
         style: Theme.of(context).textTheme.headline4,
       ),
+      const SizedBox(height: 30),
       SizedBox(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height * 0.3,
