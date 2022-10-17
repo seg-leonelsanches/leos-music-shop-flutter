@@ -2,16 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:leos_music_shop_flutter/app/providers/router_provider.dart';
 
+import '../../core/app_router.gr.dart';
 import '../../models/guitar.dart';
 import '../../widgets/image_widget.dart';
 
-class GuitarCard extends ConsumerWidget {
+class GuitarCardComponent extends ConsumerWidget {
   final Guitar guitar;
   
-  const GuitarCard({super.key, required this.guitar});
+  const GuitarCardComponent({super.key, required this.guitar});
   
   onTap(WidgetRef ref) {
-    // ref.read(routerProvider).push()
+    ref.read(routerProvider).push(GuitarDetailsRoute(guitar: guitar));
   }
   
   @override

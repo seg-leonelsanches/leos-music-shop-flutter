@@ -11,68 +11,92 @@
 // ignore_for_file: type=lint
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:auto_route/auto_route.dart' as _i2;
-import 'package:flutter/material.dart' as _i3;
+import 'package:auto_route/auto_route.dart' as _i3;
+import 'package:flutter/material.dart' as _i4;
 
+import '../models/guitar.dart' as _i5;
+import '../modules/guitars/guitar_details_screen.dart' as _i2;
 import '../modules/home/home_screen.dart' as _i1;
 
-class AppRouter extends _i2.RootStackRouter {
-  AppRouter([_i3.GlobalKey<_i3.NavigatorState>? navigatorKey])
+class AppRouter extends _i3.RootStackRouter {
+  AppRouter([_i4.GlobalKey<_i4.NavigatorState>? navigatorKey])
       : super(navigatorKey);
 
   @override
-  final Map<String, _i2.PageFactory> pagesMap = {
+  final Map<String, _i3.PageFactory> pagesMap = {
     HomeRoute.name: (routeData) {
-      final args = routeData.argsAs<HomeRouteArgs>();
-      return _i2.MaterialPageX<dynamic>(
+      return _i3.MaterialPageX<dynamic>(
         routeData: routeData,
-        child: _i1.HomeScreen(
+        child: const _i1.HomeScreen(),
+      );
+    },
+    GuitarDetailsRoute.name: (routeData) {
+      final args = routeData.argsAs<GuitarDetailsRouteArgs>();
+      return _i3.MaterialPageX<dynamic>(
+        routeData: routeData,
+        child: _i2.GuitarDetailsScreen(
           key: args.key,
-          title: args.title,
+          guitar: args.guitar,
         ),
       );
-    }
+    },
   };
 
   @override
-  List<_i2.RouteConfig> get routes => [
-        _i2.RouteConfig(
+  List<_i3.RouteConfig> get routes => [
+        _i3.RouteConfig(
           HomeRoute.name,
-          path: '/home',
-        )
+          path: '/',
+        ),
+        _i3.RouteConfig(
+          GuitarDetailsRoute.name,
+          path: '/guitar_details',
+        ),
       ];
 }
 
 /// generated route for
 /// [_i1.HomeScreen]
-class HomeRoute extends _i2.PageRouteInfo<HomeRouteArgs> {
-  HomeRoute({
-    _i3.Key? key,
-    required String title,
-  }) : super(
+class HomeRoute extends _i3.PageRouteInfo<void> {
+  const HomeRoute()
+      : super(
           HomeRoute.name,
-          path: '/home',
-          args: HomeRouteArgs(
-            key: key,
-            title: title,
-          ),
+          path: '/',
         );
 
   static const String name = 'HomeRoute';
 }
 
-class HomeRouteArgs {
-  const HomeRouteArgs({
+/// generated route for
+/// [_i2.GuitarDetailsScreen]
+class GuitarDetailsRoute extends _i3.PageRouteInfo<GuitarDetailsRouteArgs> {
+  GuitarDetailsRoute({
+    _i4.Key? key,
+    required _i5.Guitar guitar,
+  }) : super(
+          GuitarDetailsRoute.name,
+          path: '/guitar_details',
+          args: GuitarDetailsRouteArgs(
+            key: key,
+            guitar: guitar,
+          ),
+        );
+
+  static const String name = 'GuitarDetailsRoute';
+}
+
+class GuitarDetailsRouteArgs {
+  const GuitarDetailsRouteArgs({
     this.key,
-    required this.title,
+    required this.guitar,
   });
 
-  final _i3.Key? key;
+  final _i4.Key? key;
 
-  final String title;
+  final _i5.Guitar guitar;
 
   @override
   String toString() {
-    return 'HomeRouteArgs{key: $key, title: $title}';
+    return 'GuitarDetailsRouteArgs{key: $key, guitar: $guitar}';
   }
 }

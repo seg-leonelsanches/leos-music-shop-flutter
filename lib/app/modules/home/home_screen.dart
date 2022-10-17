@@ -8,9 +8,7 @@ import 'package:leos_music_shop_flutter/app/components/guitars/guitars_component
 import '../../mixins/home_mixin.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
-  const HomeScreen({super.key, required this.title});
-
-  final String title;
+  const HomeScreen({super.key});
 
   @override
   ConsumerState<ConsumerStatefulWidget> createState() => _HomeScreenState();
@@ -51,7 +49,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with HomeScreenMixin {
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+        title: const Text('Leo\'s Guitar Shop'),
       ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it

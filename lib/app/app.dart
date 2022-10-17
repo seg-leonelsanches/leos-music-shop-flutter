@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:leos_music_shop_flutter/app/providers/router_provider.dart';
 
-import 'modules/home/home_screen.dart';
+import 'core/app_router.gr.dart';
 
-class LeosMusicStoreApp extends StatelessWidget {
+class LeosMusicStoreApp extends ConsumerWidget {
   const LeosMusicStoreApp({super.key});
 
   // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
+  Widget build(BuildContext context, WidgetRef ref) {
+    final appRouter = ref.read(routerProvider);
+
+    return MaterialApp.router(
       title: 'Leo\'s Music Store',
       theme: ThemeData(
         // This is the theme of your application.
@@ -22,7 +26,8 @@ class LeosMusicStoreApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const HomeScreen(title: 'Leo\'s Music Store'),
+      routerDelegate: appRouter.delegate(),
+      routeInformationParser: appRouter.defaultRouteParser(),
     );
   }
 }
