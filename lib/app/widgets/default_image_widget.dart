@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class DefaultImageWidget extends StatelessWidget {
@@ -13,7 +12,7 @@ class DefaultImageWidget extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Image.asset(
-          'assets/images/guitar-sillhouette.png',
+          'assets/images/guitar-silhouette.png',
         width: width,
         height: height,
         fit: BoxFit.cover

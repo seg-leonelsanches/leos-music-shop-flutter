@@ -8,30 +8,37 @@ import '../../widgets/image_widget.dart';
 
 class GuitarCardComponent extends ConsumerWidget {
   final Guitar guitar;
-  
+
   const GuitarCardComponent({super.key, required this.guitar});
-  
+
   onTap(WidgetRef ref) {
     ref.read(routerProvider).push(GuitarDetailsRoute(guitar: guitar));
   }
-  
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return GestureDetector(
-      onTap: () => onTap(ref),
-      child: Card(
-        child: Row(
-          children: [
-            Text(guitar.model),
-            ImageWidget(
-              url: guitar.mainImage,
-              width: MediaQuery.of(context).size.width * 0.25,
-              height: MediaQuery.of(context).size.height * 0.25,
-              fit: BoxFit.contain
-            )
-          ]
-        )
-      )
-    );
+        onTap: () => onTap(ref),
+        child: SizedBox(
+          width: MediaQuery.of(context).size.width * 0.8,
+          height: MediaQuery.of(context).size.height * 0.25,
+          child: Card(
+              child: Row(children: [
+            Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  children: [
+                    ImageWidget(
+                        url: guitar.mainImage,
+                        width: MediaQuery.of(context).size.width * 0.5,
+                        height: MediaQuery.of(context).size.height * 0.25,
+                        fit: BoxFit.contain),
+                    Flexible(
+                      child: Text(guitar.model),
+                    )
+                  ],
+                ))
+          ])),
+        ));
   }
 }

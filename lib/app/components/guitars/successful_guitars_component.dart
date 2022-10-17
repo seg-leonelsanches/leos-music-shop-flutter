@@ -25,8 +25,9 @@ class _SuccessfulGuitarsComponentState
       ),
       SizedBox(
           width: MediaQuery.of(context).size.width,
-          height: 200,
+          height: MediaQuery.of(context).size.height * 0.3,
           child: ListView.builder(
+              physics: const PageScrollPhysics(),
               scrollDirection: Axis.horizontal,
               shrinkWrap: true,
               itemCount: widget.guitars.length,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:leos_music_shop_flutter/app/widgets/default_image_widget.dart';
+import 'package:leos_music_shop_flutter/app/widgets/internet_image_widget.dart';
 
 class ImageWidget extends StatefulWidget {
   final String? url;
@@ -19,12 +20,17 @@ class _ImageWidgetState extends State<ImageWidget> {
   @override
   Widget build(BuildContext context) {
     if (widget.url == null || widget.url == '') {
-
+      return DefaultImageWidget(
+        width: widget.width,
+        height: widget.height,
+        onTap: widget.onTap,
+      );
     }
 
-    return DefaultImageWidget(
+    return InternetImageWidget(
       width: widget.width,
       height: widget.height,
+      image: widget.url.toString(),
       onTap: widget.onTap,
     );
   }
