@@ -1,8 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shimmer/shimmer.dart';
 
-class BassesComponent extends StatelessWidget {
+import '../../providers/basses_providers.dart';
+
+class BassesComponent extends ConsumerStatefulWidget {
   const BassesComponent({super.key});
+
+  @override
+  ConsumerState<BassesComponent> createState() =>
+      _BassesComponentState();
+}
+
+class _BassesComponentState extends ConsumerState<BassesComponent> {
+  @override
+  void initState() {
+    super.initState();
+
+    Future.delayed(Duration.zero, () async {
+      ref.read(bassesNotifierProvider.notifier).init();
+    });
+  }
+
+  Future<void> refreshData() async {
+    await ref.read(bassesNotifierProvider.notifier).init();
+  }
 
   @override
   Widget build(BuildContext context) {
