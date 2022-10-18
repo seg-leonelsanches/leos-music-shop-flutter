@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../models/bass.dart';
+import 'bass_card_component.dart';
 
 class SuccessfulBassesComponent extends ConsumerStatefulWidget {
   final List<Bass> basses;
@@ -10,10 +11,10 @@ class SuccessfulBassesComponent extends ConsumerStatefulWidget {
 
   @override
   ConsumerState<SuccessfulBassesComponent> createState() =>
-      _SucessfulBassesComponentState();
+      _SuccessfulBassesComponentState();
 }
 
-class _SucessfulBassesComponentState extends ConsumerState<SuccessfulBassesComponent> {
+class _SuccessfulBassesComponentState extends ConsumerState<SuccessfulBassesComponent> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -29,6 +30,17 @@ class _SucessfulBassesComponentState extends ConsumerState<SuccessfulBassesCompo
             style: Theme.of(context).textTheme.headline4,
           ),
           const SizedBox(height: 30),
+          SizedBox(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height * 0.3,
+              child: ListView.builder(
+                  physics: const PageScrollPhysics(),
+                  scrollDirection: Axis.horizontal,
+                  shrinkWrap: true,
+                  itemCount: widget.basses.length,
+                  itemBuilder: (_, index) {
+                    return BassCardComponent(bass: widget.basses[index]);
+                  }))
         ],
       ),
     );

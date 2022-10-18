@@ -1,8 +1,10 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:leos_music_shop_flutter/app/core/enums.dart';
 import 'package:leos_music_shop_flutter/app/widgets/default_image_widget.dart';
 
 class InternetImageWidget extends StatelessWidget {
+  final ProductType productType;
   final double? width;
   final double? height;
   final String image;
@@ -10,6 +12,7 @@ class InternetImageWidget extends StatelessWidget {
 
   const InternetImageWidget(
       {super.key,
+        required this.productType,
       required this.width,
       required this.height,
       required this.image,
@@ -28,6 +31,7 @@ class InternetImageWidget extends StatelessWidget {
             height: height,
             fit: BoxFit.cover,
             errorWidget: (context, url, error) => DefaultImageWidget(
+              productType: productType,
               width: width,
               height: height,
             ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../core/app_router.gr.dart';
+import '../../core/enums.dart';
 import '../../models/bass.dart';
 import '../../providers/router_provider.dart';
 import '../../widgets/image_widget.dart';
@@ -24,21 +25,23 @@ class BassCardComponent extends ConsumerWidget {
           height: MediaQuery.of(context).size.height * 0.25,
           child: Card(
               child: Row(children: [
-                Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      children: [
-                        ImageWidget(
-                            url: bass.mainImage,
-                            width: MediaQuery.of(context).size.width * 0.5,
-                            height: MediaQuery.of(context).size.height * 0.25,
-                            fit: BoxFit.contain),
-                        Flexible(
-                          child: Text(bass.model),
-                        )
-                      ],
-                    ))
-              ])),
+            Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  children: [
+                    ImageWidget(
+                      url: bass.mainImage,
+                      width: MediaQuery.of(context).size.width * 0.5,
+                      height: MediaQuery.of(context).size.height * 0.25,
+                      fit: BoxFit.contain,
+                      productType: ProductType.bass,
+                    ),
+                    Flexible(
+                      child: Text(bass.model),
+                    )
+                  ],
+                ))
+          ])),
         ));
   }
 }

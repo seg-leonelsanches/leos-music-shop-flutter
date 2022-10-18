@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:leos_music_shop_flutter/app/providers/router_provider.dart';
 
 import '../../core/app_router.gr.dart';
+import '../../core/enums.dart';
 import '../../models/guitar.dart';
 import '../../widgets/image_widget.dart';
 
@@ -29,10 +30,12 @@ class GuitarCardComponent extends ConsumerWidget {
                 child: Column(
                   children: [
                     ImageWidget(
-                        url: guitar.mainImage,
-                        width: MediaQuery.of(context).size.width * 0.5,
-                        height: MediaQuery.of(context).size.height * 0.25,
-                        fit: BoxFit.contain),
+                      url: guitar.mainImage,
+                      width: MediaQuery.of(context).size.width * 0.5,
+                      height: MediaQuery.of(context).size.height * 0.25,
+                      fit: BoxFit.contain,
+                      productType: ProductType.guitar,
+                    ),
                     Flexible(
                       child: Text(guitar.model),
                     )
