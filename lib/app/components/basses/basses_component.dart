@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:leos_music_shop_flutter/app/components/basses/successful_basses_component.dart';
 import 'package:shimmer/shimmer.dart';
 
 import '../../providers/basses_providers.dart';
+import '../../widgets/failed_state_widget.dart';
+import '../loading_component.dart';
 
 class BassesComponent extends ConsumerStatefulWidget {
   const BassesComponent({super.key});
@@ -28,33 +31,12 @@ class _BassesComponentState extends ConsumerState<BassesComponent> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 16,
-        vertical: 16
-      ),
-      child: Column(
-        children: <Widget>[
-          const SizedBox(height: 30),
-          Text(
-            'Basses',
-            style: Theme.of(context).textTheme.headline4,
-          ),
-          const SizedBox(height: 30),
-        ],
-      ),
-    );
-    /* return Shimmer.fromColors(
-      baseColor: const Color.fromARGB(0, 90, 90, 90),
-      highlightColor: const Color.fromARGB(0, 200, 200, 200),
-      child: Column(
-        children: <Widget>[
-          Text(
-            'Basses',
-              style: Theme.of(context).textTheme.headline4,
-          )
-        ],
-      ),
-    ); */
+  final state = ref.watch(bassesNotifierProvider);
+
+  return state.maybeWhen(
+      successful: (success) => SuccessfulBassesComponent(basses: success.basses),
+      loading: () => const LoadingComponent(),
+      failed: (errorMessage) => const FailedStateWidget(),
+      orElse: () => Container());
   }
 }

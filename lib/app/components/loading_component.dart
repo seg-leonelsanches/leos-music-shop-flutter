@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
-class LoadingGuitarsComponent extends StatelessWidget {
-  const LoadingGuitarsComponent({super.key});
+class LoadingComponent extends StatelessWidget {
+  const LoadingComponent({super.key});
 
   @override
   Widget build(BuildContext context) {

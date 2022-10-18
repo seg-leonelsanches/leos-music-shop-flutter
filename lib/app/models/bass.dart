@@ -15,7 +15,7 @@ class Bass {
     return Bass(
         model: json['model'],
         manufacturer: json['manufacturer']['name'],
-        price: (json['price'] as int).toDouble(),
+        price: json['price'] as double,
         id: json['id'],
         mainImage: json.putIfAbsent('mainImage', () => "")
     );
