@@ -6,18 +6,6 @@ class DrumsComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-      child: Column(
-        children: <Widget>[
-          const SizedBox(height: 30),
-          Text(
-            'Drums',
-            style: Theme.of(context).textTheme.headline4,
-          ),
-          const SizedBox(height: 30),
-        ],
-      ),
-    );
+    return Container();
   }
 }
