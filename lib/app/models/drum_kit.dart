@@ -14,7 +14,7 @@ class DrumKit {
   factory DrumKit.fromJson(Map<String, dynamic> json) {
     return DrumKit(
         model: json['model'],
-        manufacturer: json['manufacturer']['name'],
+        manufacturer: json['manufacturer'],
         price: json['price'] as double,
         id: json['id'],
         mainImage: json.putIfAbsent('mainImage', () => "")
