@@ -75,4 +75,17 @@ For both editors, make sure you have either tethered devices or device simulator
 
 If you opt by Android Studio, all you need to do is to ensure the Flutter and Dart plugins are installed and enabled. Using the `run` button is enough to get everything working.
 
-If you opt by VSCode, all you need to do is to ensure the Flutter and Dart extensions are installed and enabled. Use the Run and Debug option (fourth button on the left menu) to run/debug the app. 
+If you opt by VSCode, all you need to do is to ensure the Flutter and Dart extensions are installed and enabled. Use the Run and Debug option (fourth button on the left menu) to run/debug the app.
+
+## Setting up sources
+
+This app requires two sources: one iOS source and one Android source. After getting the write keys, open `lib/main.dart` and change this block:
+
+```dart
+  String writeKey;
+  if (Platform.isAndroid) {
+    writeKey = "your-android-write-key";
+  } else {
+    writeKey = "your-ios-write-key";
+  }
+```

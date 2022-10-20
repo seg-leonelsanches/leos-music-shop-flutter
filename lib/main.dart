@@ -11,9 +11,9 @@ void main() {
 
   String writeKey;
   if (Platform.isAndroid) {
-    writeKey = "Mh4yLhMbKmsvfuqo0HvsJQmpUdWo4B7L";
+    writeKey = "your-android-write-key";
   } else {
-    writeKey = "qvLBJg7UvuzfWKPmPOttAbLsOHm4y5AA";
+    writeKey = "your-ios-write-key";
   }
 
   Segment.config(
