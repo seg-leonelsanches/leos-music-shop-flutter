@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:leos_music_shop_flutter/app/core/app_router.gr.dart';
 import 'package:leos_music_shop_flutter/app/models/drum_kit.dart';
 
 import '../../core/enums.dart';
+import '../../providers/router_provider.dart';
 import '../../widgets/image_widget.dart';
 
 class DrumKitCardComponent extends ConsumerWidget {
@@ -11,7 +13,7 @@ class DrumKitCardComponent extends ConsumerWidget {
   const DrumKitCardComponent({super.key, required this.drumKit});
 
   onTap(WidgetRef ref) {
-    // ref.read(routerProvider).push(GuitarDetailsRoute(guitar: guitar));
+    ref.read(routerProvider).push(DrumKitDetailsRoute(drumKit: drumKit));
   }
 
   @override

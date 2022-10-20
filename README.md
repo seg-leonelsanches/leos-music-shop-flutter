@@ -50,6 +50,29 @@ Then run `flutter pub run build_runner build --delete-conflicting-outputs` again
 
 ## Motivation
 
-At Segment there are well-known examples of mobile app examples using, for instance, React Native, but none in Flutter. 
+At Segment there are well-known examples of mobile app examples using, for instance, React Native, but none of them in Flutter. 
 
-This follows the same principles of the other "Music Shop" apps: implementing a fictional store that sells musical instruments, but using different technologies to be tested with Segment. 
+This follows the same principles of the other "Music Shop" apps: implementing a fictional store that sells musical instruments, but using different technologies to be tested with Segment.
+
+## Running
+
+This app relies on three different APIs to work:
+
+- A Guitars API, implemented by the [Leo's Guitar Shop](https://github.com/seg-leonelsanches/leos-guitar-shop-nextjs) application;
+- A Bass Guitars API, implemented by the [Leo's Music Shop API in Python](https://github.com/seg-leonelsanches/leos-music-shop-api-python) application;
+- A Drums API, implemented by the [Leo's Music Shop API in Java](https://github.com/seg-leonelsanches/leos-music-shop-api-java) application.
+
+For now, the Guitars API is deployed at https://leos-guitar-shop-nextjs.vercel.app and can be consumed in there. The other two APIs should be running on `localhost`:
+
+- `http://localhost:8000` for Bass Guitars API;
+- `http://localhost:8080` for the Drums API.
+
+Please check each project to learn how to run them. 
+
+As any other app in Flutter, this one doesn't require an IDE to run, but a good IDE, like Android Studio or VSCode, can help. Both of them have plugins/extensions for Dart and Flutter. 
+
+For both editors, make sure you have either tethered devices or device simulators properly set.
+
+If you opt by Android Studio, all you need to do is to ensure the Flutter and Dart plugins are installed and enabled. Using the `run` button is enough to get everything working.
+
+If you opt by VSCode, all you need to do is to ensure the Flutter and Dart extensions are installed and enabled. Use the Run and Debug option (fourth button on the left menu) to run/debug the app. 
