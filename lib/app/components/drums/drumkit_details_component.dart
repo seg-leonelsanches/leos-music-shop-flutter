@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_segment/flutter_segment.dart';
 import 'package:leos_music_shop_flutter/app/models/drum_kit.dart';
 
 import '../../core/enums.dart';
@@ -11,6 +12,15 @@ class DrumKitDetailsComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Segment.screen(
+      screenName: 'Drum Kit Details',
+      properties: {
+        'model': drumKit.model,
+        'manufacturer': drumKit.manufacturer,
+        'price': drumKit.price,
+      },
+    );
+
     return Column(
       children: [
         ImageWidget(

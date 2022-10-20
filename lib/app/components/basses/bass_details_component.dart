@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_segment/flutter_segment.dart';
 
 import '../../core/enums.dart';
 import '../../models/bass.dart';
@@ -11,6 +12,15 @@ class BassDetailsComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Segment.screen(
+      screenName: 'Bass Guitar Details',
+      properties: {
+        'model': bass.model,
+        'manufacturer': bass.manufacturer,
+        'price': bass.price,
+      },
+    );
+
     return Column(
       children: [
         ImageWidget(

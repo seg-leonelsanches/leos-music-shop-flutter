@@ -17,7 +17,7 @@ samples, guidance on mobile development, and a full API reference.
 
 ## Architecture
 
-- [AutoRouter](https://github.com/Milad-Akarie/auto_route_library), used to establish global routes between componentes in the app;
+- [AutoRouter](https://github.com/Milad-Akarie/auto_route_library), used to establish global routes between components in the app;
 - [Riverpod](https://riverpod.dev/), used for caching and global state retrieval;
 - [Freezed](https://github.com/rrousselGit/freezed), to reduce boilerplates and generate repetitive code;
 - [Dio](https://github.com/flutterchina/dio), a robust HTTP Client;
