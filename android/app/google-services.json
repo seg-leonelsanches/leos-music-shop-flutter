@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "571829207432",
+    "project_id": "leos-music-shop",
+    "storage_bucket": "leos-music-shop.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:571829207432:android:cbd70fb4714cbd1908fa3d",
+        "android_client_info": {
+          "package_name": "br.com.segment.leos_music_shop_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "571829207432-oueaj8ktmaja4i7bcus8v2dcahcs80gq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGzK8znqKMyK5jMVhHO3IdR8TnH-dKIfY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "571829207432-oueaj8ktmaja4i7bcus8v2dcahcs80gq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
