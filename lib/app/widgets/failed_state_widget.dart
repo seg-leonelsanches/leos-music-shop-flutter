@@ -7,6 +7,12 @@ class FailedStateWidget extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     // TODO: implement build
-    throw UnimplementedError();
+    // throw UnimplementedError();
+    return Column(children: <Widget>[
+      Text(
+        'Failed.',
+        style: Theme.of(context).textTheme.headline4,
+      )
+    ]);
   }
 }
